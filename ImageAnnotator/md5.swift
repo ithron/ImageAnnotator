@@ -1,11 +1,3 @@
-//
-//  md5.swift
-//  ImageAnnotator
-//
-//  Created by Stefan Reinhold on 02.01.18.
-//  Copyright © 2018 Stefan Reinhold. All rights reserved.
-//
-
 import Foundation
 
 /**
