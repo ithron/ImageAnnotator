@@ -4,3 +4,5 @@ use_frameworks!
 target 'ImageAnnotator' do
   pod 'CCBottomRefreshControl'
 end
+
+pod 'CCBottomRefreshControl', :inhibit_warnings => true
