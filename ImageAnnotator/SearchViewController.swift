@@ -31,9 +31,8 @@
 import UIKit
 import CoreData
 
-class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate {
+class SearchViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchBarDelegate {
   
-  var detailViewController: DetailViewController?
   var managedObjectContext: NSManagedObjectContext?
   
   var _fetchedResultsController: NSFetchedResultsController<Image>?
@@ -45,17 +44,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 }
 
 // MARK: - UIViewController Overrides
-extension MasterViewController {
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    if let split = splitViewController {
-      let controllers = split.viewControllers
-      detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
-    }
-  }
+extension SearchViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
@@ -65,20 +54,16 @@ extension MasterViewController {
     tableView.bottomRefreshControl = refreshControl
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
-    super.viewWillAppear(animated)
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  override func viewWillDisappear(_ animated: Bool) {
+    tableView.bottomRefreshControl = nil
+    
+    super.viewWillDisappear(animated)
   }
   
 }
 
 // MARK: - Search Query
-extension MasterViewController {
+extension SearchViewController {
   
   fileprivate func searchCompletionHandler(_ result_: SearchResult?, _ error: SearchQuery.QueryError?) {
     DispatchQueue.main.async {
@@ -182,7 +167,7 @@ extension MasterViewController {
 }
 
 // MARK: - UITableViewDelegate
-extension MasterViewController {
+extension SearchViewController {
   
   // Add gesture
   override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -224,7 +209,7 @@ extension MasterViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension MasterViewController {
+extension SearchViewController {
   
   override func numberOfSections(in tableView: UITableView) -> Int {
     return fetchedResultsController.sections?.count ?? 0
@@ -259,7 +244,7 @@ extension MasterViewController {
 }
 
 // MARK: - NSFetchedResultsControllerDelegate
-extension MasterViewController {
+extension SearchViewController {
   
   var fetchedResultsController: NSFetchedResultsController<Image> {
     if _fetchedResultsController != nil {
@@ -320,11 +305,14 @@ extension MasterViewController {
 }
 
 // MARK: - SearchBarDelegate
-extension MasterViewController {
+extension SearchViewController {
   
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     guard let keywords = searchBar.text else { return }
-    print("Search for: \(keywords)")
+    
+    defer {
+      searchBar.resignFirstResponder()
+    }
     
     do {
       searchQuery = try SearchQuery(query: keywords)
@@ -338,22 +326,9 @@ extension MasterViewController {
     
   }
   
-}
-
-
-// MARK: - Segues
-extension MasterViewController {
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showDetail" {
-      if let indexPath = tableView.indexPathForSelectedRow {
-        let object = fetchedResultsController.object(at: indexPath)
-        let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-        controller.detailItem = object
-        controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-        controller.navigationItem.leftItemsSupplementBackButton = true
-      }
-    }
+  func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
   }
   
 }
+
