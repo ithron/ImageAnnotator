@@ -1,0 +1,9 @@
+language: objective-c
+
+osx_image: xcode9.2
+
+xcode_workspace: ImageAnnotator.xcworkspace
+xcode_scheme: ImageAnnotator
+
+script:
+- set -o pipefail && xcodebuild -workspace ${TRAVIS_XCODE_WORKSPACE} -scheme "${TRAVIS_XCODE_SCHEME}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO clean build | xcpretty -f `xcpretty-travis-formatter`

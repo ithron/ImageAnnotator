@@ -4,6 +4,10 @@
    <FileRef
       location = "group:ImageAnnotator.xcodeproj">
    </FileRef>
+   <Group
+      location = "group:"
+      name = "Supporting Files">
+   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>

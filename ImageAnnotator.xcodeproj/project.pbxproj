@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF64AAAAD19BC299E97BA411 /* Pods_ImageAnnotator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433A91B5C4BFAE5EA1E98154 /* Pods_ImageAnnotator.framework */; };
 		F8A706A31FFD8555007780AF /* CCBottomRefreshControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A706A41FFD8555007780AF /* CCBottomRefreshControl.framework */; };
+		F8C495DB200004FA00B59B3F /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = F8C495DA200004F900B59B3F /* .travis.yml */; };
 		F8E83C351FFBC28F00951382 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C341FFBC28F00951382 /* AppDelegate.swift */; };
 		F8E83C381FFBC28F00951382 /* ImageAnnotator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C361FFBC28F00951382 /* ImageAnnotator.xcdatamodeld */; };
 		F8E83C3A1FFBC28F00951382 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C391FFBC28F00951382 /* SearchViewController.swift */; };
@@ -25,6 +26,7 @@
 		9C7ABE03663C0E0C72DC6578 /* Pods-ImageAnnotator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAnnotator.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAnnotator/Pods-ImageAnnotator.release.xcconfig"; sourceTree = "<group>"; };
 		DE28405359B93658296476A1 /* Pods-ImageAnnotator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAnnotator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAnnotator/Pods-ImageAnnotator.debug.xcconfig"; sourceTree = "<group>"; };
 		F8A706A41FFD8555007780AF /* CCBottomRefreshControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CCBottomRefreshControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8C495DA200004F900B59B3F /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		F8E83C311FFBC28F00951382 /* ImageAnnotator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageAnnotator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E83C341FFBC28F00951382 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8E83C371FFBC28F00951382 /* ImageAnnotator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageAnnotator.xcdatamodel; sourceTree = "<group>"; };
@@ -70,12 +72,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F8C495D9200004D100B59B3F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8C495DA200004F900B59B3F /* .travis.yml */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		F8E83C281FFBC28F00951382 = {
 			isa = PBXGroup;
 			children = (
 				F8E83C331FFBC28F00951382 /* ImageAnnotator */,
 				F8E83C321FFBC28F00951382 /* Products */,
 				94FFECFD04F08106FC4A0FEE /* Pods */,
+				F8C495D9200004D100B59B3F /* Supporting Files */,
 				F504994DCA35C743C1A3E8F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -171,6 +182,7 @@
 			files = (
 				F8E83C441FFBC29000951382 /* LaunchScreen.storyboard in Resources */,
 				F8E83C411FFBC28F00951382 /* Assets.xcassets in Resources */,
+				F8C495DB200004FA00B59B3F /* .travis.yml in Resources */,
 				F8E83C3F1FFBC28F00951382 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
