@@ -10,6 +10,7 @@
 		DF64AAAAD19BC299E97BA411 /* Pods_ImageAnnotator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433A91B5C4BFAE5EA1E98154 /* Pods_ImageAnnotator.framework */; };
 		F8A706A31FFD8555007780AF /* CCBottomRefreshControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A706A41FFD8555007780AF /* CCBottomRefreshControl.framework */; };
 		F8C495DB200004FA00B59B3F /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = F8C495DA200004F900B59B3F /* .travis.yml */; };
+		F8C495DD200005F700B59B3F /* ThumbnailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C495DC200005F700B59B3F /* ThumbnailTableViewController.swift */; };
 		F8E83C351FFBC28F00951382 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C341FFBC28F00951382 /* AppDelegate.swift */; };
 		F8E83C381FFBC28F00951382 /* ImageAnnotator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C361FFBC28F00951382 /* ImageAnnotator.xcdatamodeld */; };
 		F8E83C3A1FFBC28F00951382 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C391FFBC28F00951382 /* SearchViewController.swift */; };
@@ -27,6 +28,7 @@
 		DE28405359B93658296476A1 /* Pods-ImageAnnotator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAnnotator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAnnotator/Pods-ImageAnnotator.debug.xcconfig"; sourceTree = "<group>"; };
 		F8A706A41FFD8555007780AF /* CCBottomRefreshControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CCBottomRefreshControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C495DA200004F900B59B3F /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		F8C495DC200005F700B59B3F /* ThumbnailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailTableViewController.swift; sourceTree = "<group>"; };
 		F8E83C311FFBC28F00951382 /* ImageAnnotator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageAnnotator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E83C341FFBC28F00951382 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8E83C371FFBC28F00951382 /* ImageAnnotator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageAnnotator.xcdatamodel; sourceTree = "<group>"; };
@@ -80,6 +82,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F8C495DE2000064800B59B3F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8E83C391FFBC28F00951382 /* SearchViewController.swift */,
+				F8C495DC200005F700B59B3F /* ThumbnailTableViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F8C495E02000067700B59B3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8E83C4D1FFC220800951382 /* SearchQuery.swift */,
+				F8E83C4B1FFBE8CD00951382 /* SearchResult.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F8C495E12000068900B59B3F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F8E83C531FFC36EC00951382 /* ImageAnnotator-Bridging-Header.h */,
+				F8E83C511FFC369700951382 /* md5.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		F8E83C281FFBC28F00951382 = {
 			isa = PBXGroup;
 			children = (
@@ -102,17 +131,15 @@
 		F8E83C331FFBC28F00951382 /* ImageAnnotator */ = {
 			isa = PBXGroup;
 			children = (
+				F8C495E12000068900B59B3F /* Utilities */,
+				F8C495E02000067700B59B3F /* Models */,
+				F8C495DE2000064800B59B3F /* View Controllers */,
 				F8E83C341FFBC28F00951382 /* AppDelegate.swift */,
-				F8E83C391FFBC28F00951382 /* SearchViewController.swift */,
-				F8E83C4B1FFBE8CD00951382 /* SearchResult.swift */,
-				F8E83C511FFC369700951382 /* md5.swift */,
-				F8E83C4D1FFC220800951382 /* SearchQuery.swift */,
 				F8E83C3D1FFBC28F00951382 /* Main.storyboard */,
 				F8E83C401FFBC28F00951382 /* Assets.xcassets */,
 				F8E83C421FFBC29000951382 /* LaunchScreen.storyboard */,
 				F8E83C451FFBC29000951382 /* Info.plist */,
 				F8E83C361FFBC28F00951382 /* ImageAnnotator.xcdatamodeld */,
-				F8E83C531FFC36EC00951382 /* ImageAnnotator-Bridging-Header.h */,
 			);
 			path = ImageAnnotator;
 			sourceTree = "<group>";
@@ -254,6 +281,7 @@
 				F8E83C4E1FFC220800951382 /* SearchQuery.swift in Sources */,
 				F8E83C351FFBC28F00951382 /* AppDelegate.swift in Sources */,
 				F8E83C3A1FFBC28F00951382 /* SearchViewController.swift in Sources */,
+				F8C495DD200005F700B59B3F /* ThumbnailTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
