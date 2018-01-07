@@ -37,7 +37,11 @@ class ThumbnailTableViewController: UITableViewController, NSFetchedResultsContr
   
   var _fetchedResultsController: NSFetchedResultsController<Image>?
   
-  var fetchPredicate : NSPredicate?
+  var fetchPredicate : NSPredicate? {
+    return nil
+  }
+  
+  var cacheName : String? { return nil }
   
 }
 
@@ -54,8 +58,14 @@ extension ThumbnailTableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    print(String(describing: fetchedResultsController.fetchRequest.predicate))
+    
     let cell = tableView.dequeueReusableCell(withIdentifier: "ThumbnailCell", for: indexPath)
     let image = fetchedResultsController.object(at: indexPath)
+    
+    print("Fetched object: image.state = : \(image.state)")
+    
     configureCell(cell, withImage: image)
     return cell
   }
@@ -99,7 +109,11 @@ extension ThumbnailTableViewController {
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: "Master")
+    let aFetchedResultsController =
+      NSFetchedResultsController(fetchRequest: fetchRequest,
+                                 managedObjectContext: self.managedObjectContext!,
+                                 sectionNameKeyPath: nil,
+                                 cacheName: cacheName)
     aFetchedResultsController.delegate = self
     _fetchedResultsController = aFetchedResultsController
     

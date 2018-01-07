@@ -37,16 +37,16 @@ class SearchViewController: ThumbnailTableViewController, UISearchBarDelegate {
   
   let imageQueue = DispatchQueue(label: "ImageQueue")
   
+  override var fetchPredicate: NSPredicate? {
+    return NSPredicate(format: "state == 0")
+  }
+  
+  override var cacheName: String? { return "Search" }
+  
 }
 
 // MARK: - UIViewController Overrides
 extension SearchViewController {
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    super.fetchPredicate = NSPredicate(format: "state == 0")
-  }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
