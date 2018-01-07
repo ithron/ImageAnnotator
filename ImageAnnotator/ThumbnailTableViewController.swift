@@ -59,13 +59,9 @@ extension ThumbnailTableViewController {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    print(String(describing: fetchedResultsController.fetchRequest.predicate))
-    
     let cell = tableView.dequeueReusableCell(withIdentifier: "ThumbnailCell", for: indexPath)
     let image = fetchedResultsController.object(at: indexPath)
-    
-    print("Fetched object: image.state = : \(image.state)")
-    
+
     configureCell(cell, withImage: image)
     return cell
   }
@@ -73,8 +69,6 @@ extension ThumbnailTableViewController {
   func configureCell(_ cell: UITableViewCell, withImage image: Image) {
     if let thumbnailData = image.thumbnail?.data?.data {
       cell.imageView?.image = UIImage(data: thumbnailData)
-    } else {
-      print("Fetch thumbnail from: \(String(describing: image.thumbnail?.url))")
     }
     
     cell.textLabel?.text = image.id!
