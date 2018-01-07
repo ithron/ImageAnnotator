@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Annotation" representedClassName="Annotation" syncable="YES" codeGenerationType="class">
-        <attribute name="type" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="image" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="annotations" inverseEntity="Image" syncable="YES"/>
-        <relationship name="label" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Label" syncable="YES"/>
-        <relationship name="position" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Point" syncable="YES"/>
+        <relationship name="label" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Label" inverseName="annotations" inverseEntity="Label" syncable="YES"/>
+        <relationship name="position" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Point" inverseName="annotation" inverseEntity="Point" syncable="YES"/>
     </entity>
     <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
         <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -14,24 +13,31 @@
         <attribute name="url" optional="YES" attributeType="URI" syncable="YES"/>
         <attribute name="width" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="annotations" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Annotation" inverseName="image" inverseEntity="Annotation" syncable="YES"/>
-        <relationship name="file" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageFile" inverseName="image" inverseEntity="ImageFile" syncable="YES"/>
-        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Thumbnail" inverseName="image" inverseEntity="Thumbnail" syncable="YES"/>
+        <relationship name="file" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ImageFile" inverseName="image" inverseEntity="ImageFile" syncable="YES"/>
+        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Thumbnail" inverseName="image" inverseEntity="Thumbnail" syncable="YES"/>
     </entity>
     <entity name="ImageFile" representedClassName="ImageFile" syncable="YES" codeGenerationType="class">
         <attribute name="url" optional="YES" attributeType="URI" syncable="YES"/>
         <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="file" inverseEntity="Image" syncable="YES"/>
     </entity>
-    <entity name="Label" representedClassName="Label" syncable="YES" codeGenerationType="class">
-        <attribute name="text" attributeType="String" syncable="YES"/>
+    <entity name="Label" representedClassName="Label" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <relationship name="annotations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Annotation" inverseName="label" inverseEntity="Annotation" syncable="YES"/>
+    </entity>
+    <entity name="NumericLabel" representedClassName="NumericLabel" parentEntity="Label" syncable="YES" codeGenerationType="class">
+        <attribute name="label" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="Point" representedClassName="Point" syncable="YES" codeGenerationType="class">
         <attribute name="x" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="y" attributeType="Float" minValueString="0" maxValueString="1" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="annotation" maxCount="1" deletionRule="Nullify" destinationEntity="Annotation" inverseName="position" inverseEntity="Annotation" syncable="YES"/>
+    </entity>
+    <entity name="TextLabel" representedClassName="TextLabel" parentEntity="Label" syncable="YES" codeGenerationType="class">
+        <attribute name="label" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Thumbnail" representedClassName="Thumbnail" codeGenerationType="class">
         <attribute name="url" optional="YES" attributeType="URI" syncable="YES"/>
-        <relationship name="data" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ThumbnailData" inverseName="thumbnail" inverseEntity="ThumbnailData" syncable="YES"/>
-        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="thumbnail" inverseEntity="Image" syncable="YES"/>
+        <relationship name="data" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ThumbnailData" inverseName="thumbnail" inverseEntity="ThumbnailData" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Image" inverseName="thumbnail" inverseEntity="Image" syncable="YES"/>
         <userInfo/>
     </entity>
     <entity name="ThumbnailData" representedClassName="ThumbnailData" syncable="YES" codeGenerationType="class">
@@ -41,12 +47,14 @@
         <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Thumbnail" inverseName="data" inverseEntity="Thumbnail" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Annotation" positionX="270" positionY="261" width="128" height="90"/>
         <element name="Image" positionX="261" positionY="198" width="128" height="180"/>
         <element name="ImageFile" positionX="288" positionY="270" width="128" height="75"/>
+        <element name="Label" positionX="288" positionY="306" width="128" height="60"/>
+        <element name="Point" positionX="279" positionY="279" width="128" height="90"/>
         <element name="Thumbnail" positionX="261" positionY="189" width="128" height="90"/>
         <element name="ThumbnailData" positionX="270" positionY="234" width="128" height="105"/>
-        <element name="Annotation" positionX="270" positionY="261" width="128" height="105"/>
-        <element name="Point" positionX="279" positionY="279" width="128" height="75"/>
-        <element name="Label" positionX="288" positionY="306" width="128" height="60"/>
+        <element name="TextLabel" positionX="297" positionY="297" width="128" height="60"/>
+        <element name="NumericLabel" positionX="306" positionY="306" width="128" height="60"/>
     </elements>
 </model>
