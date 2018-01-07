@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Unannotated Images-->
         <scene sceneID="mUK-NU-cMU">
             <objects>
-                <tableViewController id="gkZ-OQ-O3o" sceneMemberID="viewController">
+                <tableViewController title="Unannotated Images" id="gkZ-OQ-O3o" customClass="AnnotationTableViewController" customModule="ImageAnnotator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SZz-eP-mM4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
         <!--Root View Controller-->
         <scene sceneID="kc9-kT-0bY">
             <objects>
-                <tableViewController id="AaT-Z6-IcT" sceneMemberID="viewController">
+                <tableViewController id="AaT-Z6-IcT" customClass="AnnotationViewerTableViewController" customModule="ImageAnnotator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fzh-Yq-DIF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qfW-5Y-IrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2950" y="82"/>
+            <point key="canvasLocation" x="-2898" y="81"/>
         </scene>
         <!--Search-->
         <scene sceneID="smW-Zh-WAh">

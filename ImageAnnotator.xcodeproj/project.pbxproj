@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		DF64AAAAD19BC299E97BA411 /* Pods_ImageAnnotator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433A91B5C4BFAE5EA1E98154 /* Pods_ImageAnnotator.framework */; };
+		F8813DAF20000C1000589644 /* AnnotationViewerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8813DAE20000C1000589644 /* AnnotationViewerTableViewController.swift */; };
 		F8A706A31FFD8555007780AF /* CCBottomRefreshControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A706A41FFD8555007780AF /* CCBottomRefreshControl.framework */; };
 		F8C495DB200004FA00B59B3F /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = F8C495DA200004F900B59B3F /* .travis.yml */; };
 		F8C495DD200005F700B59B3F /* ThumbnailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C495DC200005F700B59B3F /* ThumbnailTableViewController.swift */; };
+		F8C495E32000086700B59B3F /* AnnotationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C495E22000086700B59B3F /* AnnotationTableViewController.swift */; };
 		F8E83C351FFBC28F00951382 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C341FFBC28F00951382 /* AppDelegate.swift */; };
 		F8E83C381FFBC28F00951382 /* ImageAnnotator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C361FFBC28F00951382 /* ImageAnnotator.xcdatamodeld */; };
 		F8E83C3A1FFBC28F00951382 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C391FFBC28F00951382 /* SearchViewController.swift */; };
@@ -26,11 +28,13 @@
 		433A91B5C4BFAE5EA1E98154 /* Pods_ImageAnnotator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageAnnotator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7ABE03663C0E0C72DC6578 /* Pods-ImageAnnotator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAnnotator.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAnnotator/Pods-ImageAnnotator.release.xcconfig"; sourceTree = "<group>"; };
 		DE28405359B93658296476A1 /* Pods-ImageAnnotator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAnnotator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAnnotator/Pods-ImageAnnotator.debug.xcconfig"; sourceTree = "<group>"; };
+		F8813DAE20000C1000589644 /* AnnotationViewerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationViewerTableViewController.swift; sourceTree = "<group>"; };
 		F8813DB020000E4100589644 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F8813DB120000E4200589644 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		F8A706A41FFD8555007780AF /* CCBottomRefreshControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CCBottomRefreshControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C495DA200004F900B59B3F /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		F8C495DC200005F700B59B3F /* ThumbnailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailTableViewController.swift; sourceTree = "<group>"; };
+		F8C495E22000086700B59B3F /* AnnotationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationTableViewController.swift; sourceTree = "<group>"; };
 		F8E83C311FFBC28F00951382 /* ImageAnnotator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageAnnotator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E83C341FFBC28F00951382 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8E83C371FFBC28F00951382 /* ImageAnnotator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageAnnotator.xcdatamodel; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 		F8C495DE2000064800B59B3F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F8C495E22000086700B59B3F /* AnnotationTableViewController.swift */,
+				F8813DAE20000C1000589644 /* AnnotationViewerTableViewController.swift */,
 				F8E83C391FFBC28F00951382 /* SearchViewController.swift */,
 				F8C495DC200005F700B59B3F /* ThumbnailTableViewController.swift */,
 			);
@@ -286,6 +292,8 @@
 				F8E83C351FFBC28F00951382 /* AppDelegate.swift in Sources */,
 				F8E83C3A1FFBC28F00951382 /* SearchViewController.swift in Sources */,
 				F8C495DD200005F700B59B3F /* ThumbnailTableViewController.swift in Sources */,
+				F8C495E32000086700B59B3F /* AnnotationTableViewController.swift in Sources */,
+				F8813DAF20000C1000589644 /* AnnotationViewerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

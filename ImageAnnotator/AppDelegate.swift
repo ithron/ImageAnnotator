@@ -42,8 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     
     let tabBarController = self.window!.rootViewController as! UITabBarController
     tabBarController.delegate = self
-    let searchController = tabBarController.viewControllers![0] as! SearchViewController
-    searchController.managedObjectContext = self.persistentContainer.viewContext
+    
+    let searchViewController = tabBarController.viewControllers![0] as! ThumbnailTableViewController
+    searchViewController.managedObjectContext = persistentContainer.viewContext
+    
+    let annotationViewController = (tabBarController.viewControllers![1] as! UINavigationController).topViewController! as! ThumbnailTableViewController
+    annotationViewController.managedObjectContext = persistentContainer.viewContext
+    
+    let viewerViewController = (tabBarController.viewControllers![2] as! UINavigationController).topViewController! as! ThumbnailTableViewController
+    viewerViewController.managedObjectContext = persistentContainer.viewContext
 
     return true
   }
