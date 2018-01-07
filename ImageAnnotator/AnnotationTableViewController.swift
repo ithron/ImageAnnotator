@@ -16,4 +16,17 @@ class AnnotationTableViewController : ThumbnailTableViewController {
   
 }
 
-
+// MARK: UITableViewDelegate
+extension AnnotationTableViewController {
+  
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = super.tableView(tableView, cellForRowAt: indexPath)
+    
+    if fetchedResultsController.object(at: indexPath).file != nil {
+      cell.accessoryType = .disclosureIndicator
+    }
+    
+    return cell
+  }
+  
+}
