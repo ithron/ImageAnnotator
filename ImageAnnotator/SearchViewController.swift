@@ -33,9 +33,11 @@ import CoreData
 
 class SearchViewController: ThumbnailTableViewController, UISearchBarDelegate {
   
-  var searchQuery : SearchQuery?
+  static let imageQueue =
+    DispatchQueue(label: "com.sreinhold.ImageAnnotator.ThumbnailQueue",
+                  qos: .utility)
   
-  let imageQueue = DispatchQueue(label: "ImageQueue")
+  var searchQuery : SearchQuery?
   
   override var fetchPredicate: NSPredicate? {
     return NSPredicate(format: "state == 0")
@@ -128,7 +130,7 @@ extension SearchViewController {
     
     if let results = try? context.fetch(fetchRequest) {
       for fetchResult in results {
-        imageQueue.async {
+        SearchViewController.imageQueue.async {
           if let data = try? Data(contentsOf: fetchResult.url!) {
             
             DispatchQueue.main.async {
@@ -141,7 +143,7 @@ extension SearchViewController {
         }
       }
       
-      imageQueue.async {
+      SearchViewController.imageQueue.async {
         DispatchQueue.main.async {
           
           do {
@@ -180,6 +182,55 @@ extension SearchViewController {
       object.setValue(2, forKey: "state")
       
       try? self.fetchedResultsController.managedObjectContext.save()
+      
+      SearchViewController.imageQueue.async {
+        guard let data = try? Data(contentsOf: object.url!) else {
+          print("Failed to download image from: \(object.url!)")
+          DispatchQueue.main.async {
+            self.fetchedResultsController.managedObjectContext.delete(object)
+          }
+          return
+        }
+        
+        do {
+          guard let image = UIImage(data: data) else {
+            print("Failed to load image \(object.id!)")
+            return
+          }
+          let fileManager = FileManager.default
+          let docUrl = try fileManager.url(for: .documentDirectory,
+                                           in: .userDomainMask,
+                                           appropriateFor: nil,
+                                           create: false)
+          let imgDir = docUrl.appendingPathComponent("Images")
+          try fileManager.createDirectory(at: imgDir,
+                                          withIntermediateDirectories: true,
+                                          attributes: nil)
+          let imgURL = imgDir.appendingPathComponent("\(object.id!).png")
+          
+          guard let pngData = UIImagePNGRepresentation(image) else {
+            print("Failed to convert image \(object.id!) to PNG")
+            return
+          }
+          
+          try pngData.write(to: imgURL)
+          
+          DispatchQueue.main.async {
+            let context = self.fetchedResultsController.managedObjectContext
+            let imageFile = ImageFile(context: context)
+            imageFile.url = imgURL
+            imageFile.image = object
+            object.setValue(imageFile, forKey: "file")
+            
+            try? context.save()
+            print("Saved image to \(imgURL)")
+          }
+          
+        } catch {
+          fatalError(error.localizedDescription)
+        }
+        
+      }
       
       success(true)
     }
