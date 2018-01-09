@@ -6,12 +6,12 @@
         <relationship name="position" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Point" inverseName="annotation" inverseEntity="Point" syncable="YES"/>
     </entity>
     <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
-        <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="index" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="state" optional="YES" attributeType="Integer 16" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="url" optional="YES" attributeType="URI" syncable="YES"/>
-        <attribute name="width" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="height" attributeType="Integer 32" minValueString="1" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="index" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="state" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="url" attributeType="URI" syncable="YES"/>
+        <attribute name="width" attributeType="Integer 32" minValueString="1" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="annotations" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Annotation" inverseName="image" inverseEntity="Annotation" syncable="YES"/>
         <relationship name="file" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ImageFile" inverseName="image" inverseEntity="ImageFile" syncable="YES"/>
         <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Thumbnail" inverseName="image" inverseEntity="Thumbnail" syncable="YES"/>
@@ -51,10 +51,10 @@
         <element name="Image" positionX="261" positionY="198" width="128" height="180"/>
         <element name="ImageFile" positionX="288" positionY="270" width="128" height="75"/>
         <element name="Label" positionX="288" positionY="306" width="128" height="60"/>
+        <element name="NumericLabel" positionX="306" positionY="306" width="128" height="60"/>
         <element name="Point" positionX="279" positionY="279" width="128" height="90"/>
+        <element name="TextLabel" positionX="297" positionY="297" width="128" height="60"/>
         <element name="Thumbnail" positionX="261" positionY="189" width="128" height="90"/>
         <element name="ThumbnailData" positionX="270" positionY="234" width="128" height="105"/>
-        <element name="TextLabel" positionX="297" positionY="297" width="128" height="60"/>
-        <element name="NumericLabel" positionX="306" positionY="306" width="128" height="60"/>
     </elements>
 </model>
