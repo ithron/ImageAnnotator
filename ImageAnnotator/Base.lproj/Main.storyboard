@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,6 +42,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Zar-xS-i4a" kind="show" identifier="annotate" id="ZQF-f0-cwE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -48,11 +52,45 @@
                             <outlet property="delegate" destination="gkZ-OQ-O3o" id="oKY-Jq-4ow"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="KjJ-Ym-g6Y"/>
+                    <navigationItem key="navigationItem" title="Unannotated" id="KjJ-Ym-g6Y"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYY-ke-EcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-278" y="81"/>
+        </scene>
+        <!--Annotate-->
+        <scene sceneID="605-cn-g1k">
+            <objects>
+                <viewController title="Annotate" id="Zar-xS-i4a" customClass="AnnotationViewController" customModule="ImageAnnotator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D5k-ZR-tfL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" minimumZoomScale="0.10000000000000001" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="o8w-Bu-PNL">
+                                <rect key="frame" x="-20" y="44" width="415" height="594"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-Gs-JYb">
+                                        <rect key="frame" x="19.767455076874285" y="1.1202118215007886" width="374.99999999999977" height="554.00000000000023"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="Zar-xS-i4a" id="HFc-2a-qeN"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="VWQ-v1-drg"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ED4-Gs-JYb" id="RVf-LE-sU5"/>
+                        <outlet property="scrollView" destination="o8w-Bu-PNL" id="Mrf-Tj-MKx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jHp-WS-Ihd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628" y="80.50974512743629"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="kc9-kT-0bY">

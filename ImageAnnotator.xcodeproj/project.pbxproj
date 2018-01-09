@@ -22,6 +22,7 @@
 		F8E83C4C1FFBE8CD00951382 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C4B1FFBE8CD00951382 /* SearchResult.swift */; };
 		F8E83C4E1FFC220800951382 /* SearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C4D1FFC220800951382 /* SearchQuery.swift */; };
 		F8E83C521FFC369700951382 /* md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E83C511FFC369700951382 /* md5.swift */; };
+		F8E99C572003FAB800F72CE9 /* AnnotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E99C562003FAB800F72CE9 /* AnnotationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		F8E83C4D1FFC220800951382 /* SearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuery.swift; sourceTree = "<group>"; };
 		F8E83C511FFC369700951382 /* md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = md5.swift; sourceTree = "<group>"; };
 		F8E83C531FFC36EC00951382 /* ImageAnnotator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageAnnotator-Bridging-Header.h"; sourceTree = "<group>"; };
+		F8E99C562003FAB800F72CE9 /* AnnotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				F8813DAE20000C1000589644 /* AnnotationViewerTableViewController.swift */,
 				F8E83C391FFBC28F00951382 /* SearchViewController.swift */,
 				F8C495DC200005F700B59B3F /* ThumbnailTableViewController.swift */,
+				F8E99C562003FAB800F72CE9 /* AnnotationViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				F8E83C351FFBC28F00951382 /* AppDelegate.swift in Sources */,
 				F8E83C3A1FFBC28F00951382 /* SearchViewController.swift in Sources */,
 				F8C495DD200005F700B59B3F /* ThumbnailTableViewController.swift in Sources */,
+				F8E99C572003FAB800F72CE9 /* AnnotationViewController.swift in Sources */,
 				F8C495E32000086700B59B3F /* AnnotationTableViewController.swift in Sources */,
 				F8813DAF20000C1000589644 /* AnnotationViewerTableViewController.swift in Sources */,
 			);

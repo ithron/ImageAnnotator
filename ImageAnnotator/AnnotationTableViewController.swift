@@ -29,4 +29,30 @@ extension AnnotationTableViewController {
     return cell
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "annotate", let dest = segue.destination as? AnnotationViewController {
+      
+      if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
+        let img = fetchedResultsController.object(at: indexPath)
+        do {
+          
+          let fileManager = FileManager.default
+          let docUrl = try fileManager.url(for: .documentDirectory,
+                                           in: .userDomainMask,
+                                           appropriateFor: nil,
+                                           create: false)
+          let imgDir = docUrl.appendingPathComponent("Images")
+          let imgURL = imgDir.appendingPathComponent("\(img.id!).png")
+          
+          let data = try Data(contentsOf: imgURL)
+          dest.image = UIImage(data: data)
+        } catch {
+          print("Failed to load image \(img.id!)")
+          return
+        }
+      }
+      
+    }
+  }
+  
 }
