@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF64AAAAD19BC299E97BA411 /* Pods_ImageAnnotator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433A91B5C4BFAE5EA1E98154 /* Pods_ImageAnnotator.framework */; };
+		F82AD281200A164700C16A7E /* ScaleInvariantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82AD280200A164700C16A7E /* ScaleInvariantView.swift */; };
 		F8813DAF20000C1000589644 /* AnnotationViewerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8813DAE20000C1000589644 /* AnnotationViewerTableViewController.swift */; };
 		F8A706A31FFD8555007780AF /* CCBottomRefreshControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A706A41FFD8555007780AF /* CCBottomRefreshControl.framework */; };
 		F8C495DB200004FA00B59B3F /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = F8C495DA200004F900B59B3F /* .travis.yml */; };
@@ -29,6 +30,7 @@
 		433A91B5C4BFAE5EA1E98154 /* Pods_ImageAnnotator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageAnnotator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7ABE03663C0E0C72DC6578 /* Pods-ImageAnnotator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAnnotator.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAnnotator/Pods-ImageAnnotator.release.xcconfig"; sourceTree = "<group>"; };
 		DE28405359B93658296476A1 /* Pods-ImageAnnotator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAnnotator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAnnotator/Pods-ImageAnnotator.debug.xcconfig"; sourceTree = "<group>"; };
+		F82AD280200A164700C16A7E /* ScaleInvariantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleInvariantView.swift; sourceTree = "<group>"; };
 		F8813DAE20000C1000589644 /* AnnotationViewerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationViewerTableViewController.swift; sourceTree = "<group>"; };
 		F8813DB020000E4100589644 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F8813DB120000E4200589644 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
@@ -80,6 +82,24 @@
 				F8A706A41FFD8555007780AF /* CCBottomRefreshControl.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F82AD27F200A162F00C16A7E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F82AD280200A164700C16A7E /* ScaleInvariantView.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		F8A955DE20064E7D00DCF5A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F8A955DF20064EC700DCF5A1 /* FeatureLocationView.swift */,
+				F8A955E120064F1300DCF5A1 /* FeatureLocationView.xib */,
+				F860062B20078493000E019A /* AnnotationImageView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		F8C495D9200004D100B59B3F /* Supporting Files */ = {
@@ -144,6 +164,7 @@
 		F8E83C331FFBC28F00951382 /* ImageAnnotator */ = {
 			isa = PBXGroup;
 			children = (
+				F82AD27F200A162F00C16A7E /* Protocols */,
 				F8C495E12000068900B59B3F /* Utilities */,
 				F8C495E02000067700B59B3F /* Models */,
 				F8C495DE2000064800B59B3F /* View Controllers */,
@@ -297,6 +318,7 @@
 				F8C495DD200005F700B59B3F /* ThumbnailTableViewController.swift in Sources */,
 				F8E99C572003FAB800F72CE9 /* AnnotationViewController.swift in Sources */,
 				F8C495E32000086700B59B3F /* AnnotationTableViewController.swift in Sources */,
+				F82AD281200A164700C16A7E /* ScaleInvariantView.swift in Sources */,
 				F8813DAF20000C1000589644 /* AnnotationViewerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
