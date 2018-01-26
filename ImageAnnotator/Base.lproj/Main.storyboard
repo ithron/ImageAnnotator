@@ -70,13 +70,16 @@
                                 <rect key="frame" x="-20" y="44" width="415" height="594"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-Gs-JYb">
-                                        <rect key="frame" x="19.767455076874285" y="1.1202118215007886" width="374.99999999999977" height="554.00000000000023"/>
+                                    <imageView contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-Gs-JYb" customClass="AnnotationImageVIew" customModule="ImageAnnotator" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="1" width="375" height="554"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <gestureRecognizers/>
                                     </imageView>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="Zar-xS-i4a" id="HFc-2a-qeN"/>
+                                    <outletCollection property="gestureRecognizers" destination="Zy0-eK-fx2" appends="YES" id="JZ4-kl-rQP"/>
                                 </connections>
                             </scrollView>
                         </subviews>
@@ -89,6 +92,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHp-WS-Ihd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Zy0-eK-fx2">
+                    <connections>
+                        <action selector="handleLongPressWithRecognizer:" destination="Zar-xS-i4a" id="6ug-7L-cV1"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="628" y="80.50974512743629"/>
         </scene>

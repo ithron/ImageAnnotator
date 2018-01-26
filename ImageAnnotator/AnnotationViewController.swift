@@ -69,6 +69,18 @@ extension AnnotationViewController : UIScrollViewDelegate {
   }
 
 }
+
+// MARK: - Gestures
+extension AnnotationViewController  {
+  
+  @IBAction func handleLongPress(recognizer: UILongPressGestureRecognizer) {
+    
+    let location = recognizer.location(in: imageView)
+    
+    addFeature(at: location)
+  }
+}
+
 // MARK: - Helper methods
 extension AnnotationViewController {
   
@@ -86,5 +98,40 @@ extension AnnotationViewController {
     for view in imageView.subviews {
       scale(view: view)
     }
+  }
+  
+  fileprivate func addFeature(at position: CGPoint) {
+    
+    // Add model
+    do {
+      let point = Point(context: managedObjectContext)
+      point.x = Float(position.x / imageView.frame.size.width)
+      point.y = Float(position.y / imageView.frame.size.height)
+      
+      let label = NumericLabel(context: managedObjectContext)
+      // TODO: auto assign label to label count of image
+      label.label = 23
+      let annotation = Annotation(context: managedObjectContext)
+      annotation.position = point
+      annotation.label = label
+      
+      annotation.image = imageModel
+      
+      imageModel.addToAnnotations(annotation)
+      
+      try managedObjectContext.save()
+      
+    } catch {
+      fatalError("Failed to save context")
+    }
+    
+    // Add visuals
+    let view = FeatureLocationView.loadFromNib(owner: self)
+    
+    view.position = position
+    
+    imageView.addSubview(view)
+    scale(view: view)
+    
   }
 }
