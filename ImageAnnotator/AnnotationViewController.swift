@@ -28,11 +28,13 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-import Foundation
+import CoreData
 
 class AnnotationViewController : UIViewController {
   
-  var image : UIImage?
+  var image : UIImage!
+  var imageModel : Image!
+  var managedObjectContext : NSManagedObjectContext!
   
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var scrollView : UIScrollView!

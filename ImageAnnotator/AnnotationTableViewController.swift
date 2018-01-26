@@ -46,6 +46,8 @@ extension AnnotationTableViewController {
           
           let data = try Data(contentsOf: imgURL)
           dest.image = UIImage(data: data)
+          dest.managedObjectContext = self.managedObjectContext
+          dest.imageModel = img
         } catch {
           print("Failed to load image \(img.id!)")
           return
