@@ -64,4 +64,27 @@ extension AnnotationViewController : UIScrollViewDelegate {
     return imageView
   }
   
+  func scrollViewDidZoom(_ scrollView: UIScrollView) {
+    scaleAnnotationViews()
+  }
+
+}
+// MARK: - Helper methods
+extension AnnotationViewController {
+  
+  var inverseScaleTransform : CGAffineTransform {
+    let scale = 1.0 / scrollView.zoomScale
+    return CGAffineTransform(scaleX: scale, y: scale)
+  }
+  
+  fileprivate func scale<View : UIView>(view: View) {
+    guard var scaleInvariantView = view as? ScaleInvariantView else { return }
+    scaleInvariantView.transform = inverseScaleTransform
+  }
+  
+  fileprivate func scaleAnnotationViews() {
+    for view in imageView.subviews {
+      scale(view: view)
+    }
+  }
 }
