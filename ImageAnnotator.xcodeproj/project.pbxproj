@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF64AAAAD19BC299E97BA411 /* Pods_ImageAnnotator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 433A91B5C4BFAE5EA1E98154 /* Pods_ImageAnnotator.framework */; };
 		F82AD281200A164700C16A7E /* ScaleInvariantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82AD280200A164700C16A7E /* ScaleInvariantView.swift */; };
+		F8399AFF201BB490004328BA /* Selectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8399AFE201BB490004328BA /* Selectable.swift */; };
 		F8813DAF20000C1000589644 /* AnnotationViewerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8813DAE20000C1000589644 /* AnnotationViewerTableViewController.swift */; };
 		F88418E8200D3B69007014CB /* CGPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88418E7200D3B69007014CB /* CGPointExtensions.swift */; };
 		F8A706A31FFD8555007780AF /* CCBottomRefreshControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A706A41FFD8555007780AF /* CCBottomRefreshControl.framework */; };
@@ -34,6 +35,7 @@
 		9C7ABE03663C0E0C72DC6578 /* Pods-ImageAnnotator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAnnotator.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAnnotator/Pods-ImageAnnotator.release.xcconfig"; sourceTree = "<group>"; };
 		DE28405359B93658296476A1 /* Pods-ImageAnnotator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageAnnotator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageAnnotator/Pods-ImageAnnotator.debug.xcconfig"; sourceTree = "<group>"; };
 		F82AD280200A164700C16A7E /* ScaleInvariantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleInvariantView.swift; sourceTree = "<group>"; };
+		F8399AFE201BB490004328BA /* Selectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selectable.swift; sourceTree = "<group>"; };
 		F8813DAE20000C1000589644 /* AnnotationViewerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationViewerTableViewController.swift; sourceTree = "<group>"; };
 		F8813DB020000E4100589644 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F8813DB120000E4200589644 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				F82AD280200A164700C16A7E /* ScaleInvariantView.swift */,
+				F8399AFE201BB490004328BA /* Selectable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				F82AD281200A164700C16A7E /* ScaleInvariantView.swift in Sources */,
 				F88418E8200D3B69007014CB /* CGPointExtensions.swift in Sources */,
 				F8813DAF20000C1000589644 /* AnnotationViewerTableViewController.swift in Sources */,
+				F8399AFF201BB490004328BA /* Selectable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

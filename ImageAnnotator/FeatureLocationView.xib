@@ -53,23 +53,9 @@
                 <outlet property="imageView" destination="miN-gz-DeT" id="pG8-8j-JgO"/>
                 <outlet property="labelView" destination="7Ts-bh-qjj" id="imX-UI-bKu"/>
                 <outlet property="removeButton" destination="b6Y-DM-hqi" id="D2q-Dy-2cJ"/>
-                <outletCollection property="gestureRecognizers" destination="koX-lr-b0J" appends="YES" id="hwK-Xl-Lb3"/>
-                <outletCollection property="gestureRecognizers" destination="0nh-Lo-NUZ" appends="YES" id="2ks-ks-Bfj"/>
             </connections>
             <point key="canvasLocation" x="-312.5" y="-229"/>
         </stackView>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="koX-lr-b0J">
-            <connections>
-                <action selector="panAction:" destination="jwT-Ad-KPg" id="RTD-cT-PO8"/>
-                <outlet property="delegate" destination="jwT-Ad-KPg" id="pbT-Xg-E3E"/>
-            </connections>
-        </panGestureRecognizer>
-        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="0nh-Lo-NUZ">
-            <connections>
-                <action selector="pressed:" destination="jwT-Ad-KPg" id="P2z-bi-ktB"/>
-                <outlet property="delegate" destination="jwT-Ad-KPg" id="FA8-EV-bsy"/>
-            </connections>
-        </pongPressGestureRecognizer>
     </objects>
     <resources>
         <image name="FeatureLocation" width="1000" height="1000"/>

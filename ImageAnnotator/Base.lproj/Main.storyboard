@@ -80,6 +80,7 @@
                                 <connections>
                                     <outlet property="delegate" destination="Zar-xS-i4a" id="HFc-2a-qeN"/>
                                     <outletCollection property="gestureRecognizers" destination="Zy0-eK-fx2" appends="YES" id="JZ4-kl-rQP"/>
+                                    <outletCollection property="gestureRecognizers" destination="Y5k-e5-JqH" appends="YES" id="FVB-C8-JAN"/>
                                 </connections>
                             </scrollView>
                         </subviews>
@@ -97,6 +98,11 @@
                         <action selector="handleLongPressWithRecognizer:" destination="Zar-xS-i4a" id="6ug-7L-cV1"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="Y5k-e5-JqH">
+                    <connections>
+                        <action selector="handleTapWithRecognizer:" destination="Zar-xS-i4a" id="Oka-aC-mYK"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="628" y="80.50974512743629"/>
         </scene>

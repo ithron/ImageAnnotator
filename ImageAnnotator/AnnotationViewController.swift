@@ -73,11 +73,45 @@ extension AnnotationViewController : UIScrollViewDelegate {
 // MARK: - Gestures
 extension AnnotationViewController  {
   
+  var selectableViews : [UIView] {
+    return imageView.subviews.filter { ($0 as? Selectable) != nil }
+  }
+  
+  var selectedView : UIView? {
+    get {
+      return selectableViews.first { ($0 as! Selectable).isSelected }
+    }
+  }
+  
   @IBAction func handleLongPress(recognizer: UILongPressGestureRecognizer) {
     
     let location = recognizer.location(in: imageView)
     
-    addFeature(at: location)
+    // First deselect the currently selected item
+    if var oldSelection = selectedView as! Selectable? {
+      oldSelection.isSelected = false
+    }
+    
+    // check if location is inside a selectable subview's bounds
+    if var view = (selectableViews.first{ $0.frame.contains(location) }) as! Selectable? {
+      
+      // Found a selectabel view at the tapped location, so select it
+      view.isSelected = true
+    } else {
+      
+      // No selctabel view tapped, so add a new feature view
+      addFeature(at: location)
+    }
+  }
+  
+  @IBAction func handleTap(recognizer: UITapGestureRecognizer) {
+    
+    let location = recognizer.location(in: imageView)
+    guard !(selectedView?.frame.contains(location) ?? false) else { return }
+    
+    if var selected = selectedView as! Selectable? {
+      selected.isSelected = false
+    }
   }
 }
 

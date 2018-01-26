@@ -30,7 +30,7 @@
 
 import UIKit
 
-class FeatureLocationView : UIStackView, ScaleInvariantView {
+class FeatureLocationView : UIStackView, ScaleInvariantView, Selectable {
   
   @IBOutlet fileprivate weak var labelView : UITextField!
   @IBOutlet fileprivate weak var imageView: UIImageView!
@@ -105,31 +105,3 @@ extension FeatureLocationView {
   
 }
 
-extension FeatureLocationView : UIGestureRecognizerDelegate {
-  
-  override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-    if (gestureRecognizer as? UIPanGestureRecognizer) != nil {
-      return isSelected
-    }
-    
-    if (gestureRecognizer as? UILongPressGestureRecognizer) != nil {
-      return !isSelected
-    }
-    
-    return false
-  }
-  
-  @IBAction func panAction(_ sender: UIPanGestureRecognizer) {
-    guard let view = superview else { return }
-    panOrigin = panOrigin ?? position
-    let translation = sender.translation(in: view)
-    
-    position = panOrigin! + translation
-  }
-  
-  @IBAction func pressed(_ sender: UILongPressGestureRecognizer) {
-    let location = sender.location(in: self)
-    isSelected = bounds.contains(location)
-  }
-  
-}
