@@ -34,6 +34,7 @@ class FeatureLocationView : UIStackView, ScaleInvariantView {
   
   @IBOutlet fileprivate weak var labelView : UITextField!
   @IBOutlet fileprivate weak var imageView: UIImageView!
+  @IBOutlet fileprivate weak var removeButton : UIButton!
   
   var label : String? {
     get {
@@ -50,6 +51,15 @@ class FeatureLocationView : UIStackView, ScaleInvariantView {
     }
     set {
       center(at: newValue)
+    }
+  }
+  
+  var isSelected : Bool {
+    get {
+      return !removeButton.isHidden
+    }
+    set {
+      removeButton.isHidden  = !newValue
     }
   }
 }
