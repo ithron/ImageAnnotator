@@ -47,7 +47,8 @@ class FeatureLocationView : UIStackView, ScaleInvariantView {
   
   var position : CGPoint {
     get {
-      return self.frame.origin
+      return CGPoint(x: self.imageView.center.x + self.frame.origin.x,
+                        y: self.imageView.center.y + self.frame.origin.y)
     }
     set {
       center(at: newValue)
@@ -62,6 +63,9 @@ class FeatureLocationView : UIStackView, ScaleInvariantView {
       removeButton.isHidden  = !newValue
     }
   }
+  
+  var panOrigin : CGPoint?
+  
 }
 
 extension FeatureLocationView {
@@ -97,6 +101,35 @@ extension FeatureLocationView {
     view.layer.anchorPoint = CGPoint(x: 0.5, y: centerY)
     
     return view
+  }
+  
+}
+
+extension FeatureLocationView : UIGestureRecognizerDelegate {
+  
+  override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    if (gestureRecognizer as? UIPanGestureRecognizer) != nil {
+      return isSelected
+    }
+    
+    if (gestureRecognizer as? UILongPressGestureRecognizer) != nil {
+      return !isSelected
+    }
+    
+    return false
+  }
+  
+  @IBAction func panAction(_ sender: UIPanGestureRecognizer) {
+    guard let view = superview else { return }
+    panOrigin = panOrigin ?? position
+    let translation = sender.translation(in: view)
+    
+    position = panOrigin! + translation
+  }
+  
+  @IBAction func pressed(_ sender: UILongPressGestureRecognizer) {
+    let location = sender.location(in: self)
+    isSelected = bounds.contains(location)
   }
   
 }
