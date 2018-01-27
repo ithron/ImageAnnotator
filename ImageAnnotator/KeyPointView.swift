@@ -32,7 +32,7 @@ import UIKit
 
 class KeyPointView : UIStackView, ScaleInvariantView, Selectable {
   
-  @IBOutlet fileprivate weak var labelView : UITextField!
+  @IBOutlet fileprivate weak var labelView : UILabel!
   @IBOutlet fileprivate weak var imageView: UIImageView!
   @IBOutlet fileprivate weak var removeButton : UIButton!
   

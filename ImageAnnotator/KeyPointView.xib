@@ -18,17 +18,16 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFg-HP-67d">
-                    <rect key="frame" x="0.0" y="0.0" width="77" height="16"/>
+                    <rect key="frame" x="17.5" y="0.0" width="42" height="16"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Feature ID" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7Ts-bh-qjj">
-                            <rect key="frame" x="0.0" y="0.0" width="77" height="16"/>
-                            <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULb-23-ekW">
+                            <rect key="frame" x="0.0" y="0.0" width="42" height="16"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                        </textField>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6Y-DM-hqi">
-                            <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                            <rect key="frame" x="-17.5" y="0.0" width="16" height="16"/>
                             <accessibility key="accessibilityConfiguration" label="Remove"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="b6Y-DM-hqi" secondAttribute="height" multiplier="1:1" id="2QY-Id-TKS"/>
@@ -51,7 +50,7 @@
             <viewLayoutGuide key="safeArea" id="9MA-qI-fGv"/>
             <connections>
                 <outlet property="imageView" destination="miN-gz-DeT" id="pG8-8j-JgO"/>
-                <outlet property="labelView" destination="7Ts-bh-qjj" id="imX-UI-bKu"/>
+                <outlet property="labelView" destination="ULb-23-ekW" id="adb-Nx-bju"/>
                 <outlet property="removeButton" destination="b6Y-DM-hqi" id="D2q-Dy-2cJ"/>
             </connections>
             <point key="canvasLocation" x="-312.5" y="-229"/>
