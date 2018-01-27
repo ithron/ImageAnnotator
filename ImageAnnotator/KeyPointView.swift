@@ -30,7 +30,7 @@
 
 import UIKit
 
-class FeatureLocationView : UIStackView, ScaleInvariantView, Selectable {
+class KeyPointView : UIStackView, ScaleInvariantView, Selectable {
   
   @IBOutlet fileprivate weak var labelView : UITextField!
   @IBOutlet fileprivate weak var imageView: UIImageView!
@@ -68,7 +68,7 @@ class FeatureLocationView : UIStackView, ScaleInvariantView, Selectable {
   
 }
 
-extension FeatureLocationView {
+extension KeyPointView {
   
   fileprivate func center(at position: CGPoint) {
     let size = self.frame.size
@@ -80,18 +80,18 @@ extension FeatureLocationView {
   
 }
 
-extension FeatureLocationView {
+extension KeyPointView {
   
-  static func loadFromNib(owner: Any? = nil, options: [AnyHashable : Any]? = nil) -> FeatureLocationView {
+  static func loadFromNib(owner: Any? = nil, options: [AnyHashable : Any]? = nil) -> KeyPointView {
     
-    guard let objects = Bundle.main.loadNibNamed("FeatureLocationView",
-                                        owner: owner,
-                                        options: options) else {
+    guard let objects = Bundle.main.loadNibNamed("KeyPointView",
+                                                 owner: owner,
+                                                 options: options) else {
       fatalError("Failed to load Nib")
     }
     
-    guard let view = (objects.first { return ($0 as? FeatureLocationView) != nil })
-      as! FeatureLocationView? else {
+    guard let view = (objects.first { return ($0 as? KeyPointView) != nil })
+      as! KeyPointView? else {
       fatalError("Could not find FeatureLocationView in Nib")
     }
     

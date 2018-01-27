@@ -160,7 +160,7 @@ extension AnnotationViewController {
     }
     
     // Add visuals
-    let view = FeatureLocationView.loadFromNib(owner: self)
+    let view = KeyPointView.loadFromNib(owner: self)
     
     view.position = position
     

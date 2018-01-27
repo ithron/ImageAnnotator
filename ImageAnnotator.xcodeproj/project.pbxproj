@@ -13,8 +13,8 @@
 		F8813DAF20000C1000589644 /* AnnotationViewerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8813DAE20000C1000589644 /* AnnotationViewerTableViewController.swift */; };
 		F88418E8200D3B69007014CB /* CGPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88418E7200D3B69007014CB /* CGPointExtensions.swift */; };
 		F8A706A31FFD8555007780AF /* CCBottomRefreshControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A706A41FFD8555007780AF /* CCBottomRefreshControl.framework */; };
-		F8A955E020064EC700DCF5A1 /* FeatureLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A955DF20064EC700DCF5A1 /* FeatureLocationView.swift */; };
-		F8A955E220064F1300DCF5A1 /* FeatureLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8A955E120064F1300DCF5A1 /* FeatureLocationView.xib */; };
+		F8A955E020064EC700DCF5A1 /* KeyPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A955DF20064EC700DCF5A1 /* KeyPointView.swift */; };
+		F8A955E220064F1300DCF5A1 /* KeyPointView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8A955E120064F1300DCF5A1 /* KeyPointView.xib */; };
 		F8C495DB200004FA00B59B3F /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = F8C495DA200004F900B59B3F /* .travis.yml */; };
 		F8C495DD200005F700B59B3F /* ThumbnailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C495DC200005F700B59B3F /* ThumbnailTableViewController.swift */; };
 		F8C495E32000086700B59B3F /* AnnotationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C495E22000086700B59B3F /* AnnotationTableViewController.swift */; };
@@ -41,8 +41,8 @@
 		F8813DB120000E4200589644 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		F88418E7200D3B69007014CB /* CGPointExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
 		F8A706A41FFD8555007780AF /* CCBottomRefreshControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CCBottomRefreshControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8A955DF20064EC700DCF5A1 /* FeatureLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureLocationView.swift; sourceTree = "<group>"; };
-		F8A955E120064F1300DCF5A1 /* FeatureLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureLocationView.xib; sourceTree = "<group>"; };
+		F8A955DF20064EC700DCF5A1 /* KeyPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPointView.swift; sourceTree = "<group>"; };
+		F8A955E120064F1300DCF5A1 /* KeyPointView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyPointView.xib; sourceTree = "<group>"; };
 		F8C495DA200004F900B59B3F /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		F8C495DC200005F700B59B3F /* ThumbnailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailTableViewController.swift; sourceTree = "<group>"; };
 		F8C495E22000086700B59B3F /* AnnotationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationTableViewController.swift; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 		F8A955DE20064E7D00DCF5A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F8A955DF20064EC700DCF5A1 /* FeatureLocationView.swift */,
-				F8A955E120064F1300DCF5A1 /* FeatureLocationView.xib */,
+				F8A955DF20064EC700DCF5A1 /* KeyPointView.swift */,
+				F8A955E120064F1300DCF5A1 /* KeyPointView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 				F8E83C411FFBC28F00951382 /* Assets.xcassets in Resources */,
 				F8C495DB200004FA00B59B3F /* .travis.yml in Resources */,
 				F8E83C3F1FFBC28F00951382 /* Main.storyboard in Resources */,
-				F8A955E220064F1300DCF5A1 /* FeatureLocationView.xib in Resources */,
+				F8A955E220064F1300DCF5A1 /* KeyPointView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +327,7 @@
 				F8E83C351FFBC28F00951382 /* AppDelegate.swift in Sources */,
 				F8E83C3A1FFBC28F00951382 /* SearchViewController.swift in Sources */,
 				F8C495DD200005F700B59B3F /* ThumbnailTableViewController.swift in Sources */,
-				F8A955E020064EC700DCF5A1 /* FeatureLocationView.swift in Sources */,
+				F8A955E020064EC700DCF5A1 /* KeyPointView.swift in Sources */,
 				F8E99C572003FAB800F72CE9 /* AnnotationViewController.swift in Sources */,
 				F8C495E32000086700B59B3F /* AnnotationTableViewController.swift in Sources */,
 				F82AD281200A164700C16A7E /* ScaleInvariantView.swift in Sources */,
